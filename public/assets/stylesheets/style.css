@@ -1,0 +1,13 @@
+body {
+  width: 90%;
+  margin: auto; }
+  body h1 {
+    color: #3372D9; }
+
+.main-content {
+  padding: 0; }
+  .main-content > .main-card {
+    margin-top: 2em;
+    height: 15em;
+    text-align: center;
+    box-shadow: 0px 1px 5px 2px #ddd; }
