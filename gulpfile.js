@@ -32,6 +32,18 @@ gulp.task('browserify', function () {
         .pipe(source('main.js'))
         .pipe(gulp.dest('./public/'));
 })
+//$TemplateCache Functionality for Angular App
+gulp.task('templatecache', function () {
+    console.log('Creating an AngularJS $templateCache');
+  return gulp
+    .src(config.htmltemplates)
+    .pipe(templateCache(
+        config.templateCache.file,
+        config.templateCache.options
+        ))
+    .pipe(gulp.dest('./public/'));
+});
+
 
 gulp.task('copy', ['browserify', 'scss'], function () {
     gulp.src(['./src/**/*.html', './src/**/*.css'])
@@ -45,7 +57,7 @@ gulp.task('scss', function () {
         .pipe(gulp.dest('./src/assets/stylesheets/'));
 });
 
-gulp.task('build', ['lint', 'scss', 'copy', 'scripts']);
+gulp.task('build', ['lint', 'scss', 'copy', 'scripts','templatecache']);
 
 gulp.task('browser-sync', ['build'], function () {
     browserSync.init({
