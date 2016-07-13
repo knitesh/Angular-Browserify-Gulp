@@ -16,6 +16,7 @@
     "browser-sync": "^2.9.11",
     "browserify": "^12.0.0",
     "gulp": "^3.9.0",
+    "gulp-angular-templatecache": "^2.0.0",
     "gulp-concat": "^2.6.0",
     "gulp-environments": "^0.1.1",
     "gulp-jshint": "^1.11.2",
